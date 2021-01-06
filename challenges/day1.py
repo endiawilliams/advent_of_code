@@ -1,3 +1,5 @@
+# part 1
+
 inputs = [
     1895,
     1504,
@@ -201,7 +203,7 @@ inputs = [
     1937
 ]
 
-def find_product():
+def find_product_of_2():
     for num in inputs:
         difference = 2020 - num
 
@@ -210,4 +212,21 @@ def find_product():
             print(product)
             return
 
-find_product()
+find_product_of_2()
+
+# part 2
+
+def find_product_of_3():
+    for first_num in inputs:
+        difference = 2020 - first_num
+
+        for second_num in inputs:
+            if first_num != second_num:
+                third_num = difference - second_num
+
+                if third_num in inputs:
+                    product = first_num * second_num * third_num
+                    print(product)
+                    return
+
+find_product_of_3()
